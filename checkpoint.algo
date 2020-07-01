@@ -1,0 +1,28 @@
+ALGORITHM Checkpoint_5
+VAR
+    num_ch,num_vowels : INTEGER :=0;
+    num_words: INTEGER:=1;
+    sent : STRING;
+BEGIN
+    Read(sent);
+    sent:=toLowerCase(sent);
+    FOR i FROM 0 TO length of sent DO
+        IF (sent[i]:=" ") THEN
+            num_words:=num_words+1;
+        END_IF
+        IF (type of sent[i]:=CHAR) THEN
+            num_ch:=num_ch+1;
+        END_IF
+        SWITCH (sent[i]) DO
+            case "a" : num_vowels:=num_vowels+1;BREAK;
+            case "e" : num_vowels:=num_vowels+1;BREAK;
+            case "u" : num_vowels:=num_vowels+1;BREAK;
+            case "o" : num_vowels:=num_vowels+1;BREAK;
+            default : BREAK;
+        END_SWITCH
+    END_FOR
+    Write("the the number of characters is:="num_ch);
+    Write("The number of words is:="num_words);
+    Write("The number of vowels is:="num_vowels);
+
+END
